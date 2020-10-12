@@ -6,6 +6,7 @@ class Container extends Component {
     add(...newComponent) {
         if(!newComponent) return this
 
+        newComponent = this._deleteDublicate(newComponent);
         newComponent.forEach(component => component.setContainer(this));
         this.#children = this.#children.concat(newComponent);
         return this
@@ -22,5 +23,9 @@ class Container extends Component {
         return this
     }
 
+    _deleteDublicate(arr) {
+        return Array.from(new Set(arr))
+    }
 }
+
 module.exports = Container;

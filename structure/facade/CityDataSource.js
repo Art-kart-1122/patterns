@@ -1,14 +1,21 @@
-const {Bank, Background, Credit} = require('./DataSources');
+const {Bank, Police, Hospital} = require('./DataSources');
 
 //facade class
 
-class  {
+class CityDataSource {
+    constructor(bank, hospital, police) {
+        this.bank = bank;
+        this.hospital = hospital;
+        this.police = police;
+    }
 
-    applyFor(name) {
-        const isGoodClient  = new Bank().verify(name) && new Credit().get(name) && new Background().check(name)
+    //....
+    //other methods
+    //.....
 
-        return
+    isBadCandidate(name) {
+       return this.bank.hasBacklog(name) || this.police.hasNegativeAccident(name) || this.hospital.hasCriticalIllnesses(name)
     }
 }
 
-module.exports = Mortage;
+module.exports = CityDataSource;

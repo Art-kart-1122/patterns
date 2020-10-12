@@ -1,0 +1,74 @@
+.panel {
+    display: flex;
+    justify-content: center;
+    background: black;
+    max-width: 150px;
+    flex-wrap: wrap;
+    border-radius: 30px;
+}
+
+.panel-button {
+    display: flex;
+    justify-content: center;
+    min-height: 50px;
+    flex-wrap: wrap;
+}
+
+.panel-control {
+    width: 100%;
+}
+
+.button {
+    background: azure;
+    border-radius: 5px;
+    margin: 20px;
+    min-width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.control-button {
+    background: red;
+}
+
+.panel-logo {
+    width: 100%;
+    text-align: center;
+    color: azure;
+    height: 30px;
+}
+
+.TV {
+    background: black;
+    width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.TV-monitor {
+    background: gray;
+    margin: 30px;
+    min-height: 150px;
+    font-size: 50px;
+    text-align: center;
+
+}
+
+.active {
+    background: azure;
+}
+
+#monitor {
+    position: absolute;
+    left: 20%;
+}
+
+#panel {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

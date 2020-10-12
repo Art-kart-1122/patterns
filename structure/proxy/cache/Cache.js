@@ -21,7 +21,7 @@ class Cache {
     getElementsByType(type) {
         if(!type) return []
 
-        return this._getElementByType(type)
+        return this._getElementsByType(type)
     }
 
     add(type, ...newElements) {
@@ -37,7 +37,7 @@ class Cache {
         if (!oldElements) return this
 
         const elements = this._getElementsByType(type);
-        this._setElementsByType(type, elements.filter(el => !oldElements.includes(el)));
+        this._setElementsByType(type, elements.filter(el => !oldElements.map(el => el.id).includes(el.id)));
         return this
     }
 }

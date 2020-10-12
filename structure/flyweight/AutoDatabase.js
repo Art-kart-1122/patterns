@@ -21,9 +21,13 @@ class AutoDatabase {
         Plates : ${obj.plates}`
     }
 
-    printRecord(limit) {
-        for(let idx = 0; i < limit; i++) {
-            this._getInfo(this.database[i]);
+    printRecord(limit = this.database.length) {
+        if(limit < 0) throw new Error('limit must be more 0 ')
+
+        limit = limit > this.database.length ? this.database.length : limit;
+
+        for(let idx = 0; idx < limit; idx++) {
+            console.log(this._getInfo(this.database[idx]));
         }
         return this
     }
